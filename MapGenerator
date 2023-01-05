@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.mycompany.bricksbrakergame;
 
 import java.awt.BasicStroke;
@@ -29,7 +33,7 @@ public class MapGenerator {
                     g.setColor(Color.red);
                     g.fillRect(j * bricksWidth + 80, i * bricksHeight + 50, bricksWidth, bricksHeight);
 
-                    g.setStroke(new BasicStroke(3));
+                    g.setStroke(new BasicStroke(5));
                     g.setColor(Color.black);
                     g.drawRect(j * bricksWidth + 80, i * bricksHeight + 50, bricksWidth, bricksHeight);
 
