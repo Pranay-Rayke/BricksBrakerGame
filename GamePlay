@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.mycompany.bricksbrakergame;
 
 import javax.swing.JPanel;
@@ -34,38 +38,39 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {
         map = new MapGenerator(3, 7);
         addKeyListener(this);
         setFocusable(true);
-        setFocusTraversalKeysEnabled(false);
+        //setFocusTraversalKeysEnabled(false);
         Timer = new Timer(delay, this);
         Timer.start();
     }
 
      public void paint(Graphics g) {
-        g.setColor(Color.black);
+        g.setColor(Color.DARK_GRAY);
         g.fillRect(1, 1, 692, 592);
+        
 
         map.draw((Graphics2D) g);
 
-        g.setColor(Color.yellow);
-        g.fillRect(0, 0, 3, 592);
-        g.fillRect(0, 0, 692, 3);
-        g.fillRect(691, 0, 3, 592);
+        //g.setColor(Color.black);
+        //g.fillRect(0, 0, 3, 592);
+        //g.fillRect(0, 0, 692, 3);
+        //g.fillRect(691, 0, 3, 592);
 
-        g.setColor(Color.white);
+        g.setColor(Color.GREEN);
         g.setFont(new Font("serif", Font.BOLD, 25));
         g.drawString("" + score, 590, 30);
 
-        g.setColor(Color.yellow);
-        g.fillRect(playerX, 550, 100, 8);
+        g.setColor(Color.blue);
+        g.fillRect(playerX, 550, 150, 8);
 
         //ball
-        g.setColor(Color.GREEN);
+        g.setColor(Color.MAGENTA);
         g.fillOval(ballposX, ballposY, 20, 20);
 
         if (ballposY > 570) {
             play = false;
             ballXdir = 0;
             ballYdir = 0;
-            g.setColor(Color.red);
+            g.setColor(Color.yellow);
             g.setFont(new Font("serif", Font.BOLD, 30));
             g.drawString("    Game Over Score: " + score, 190, 300);
 
@@ -74,9 +79,9 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {
         }
         if(totalbricks == 0){
             play = false;
-            ballYdir = -2;
+            ballYdir = -1;
             ballXdir = -1;
-            g.setColor(Color.red);
+            g.setColor(Color.yellow);
             g.setFont(new Font("serif",Font.BOLD,30));
             g.drawString("    Game Over: "+score,190,300);
 
